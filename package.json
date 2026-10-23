@@ -1,0 +1,12 @@
+{
+  "name": "fridge-to-recipe",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev --workspace=server\" \"npm:dev --workspace=client\"",
+    "start": "npm run start --workspace=server",
+    "build": "npm run build --workspace=client"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
